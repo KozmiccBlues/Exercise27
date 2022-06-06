@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title style="margin-left:200px">Portal pracowniczy</title>
+</head>
+<body>
+<h1 style="color: midnightblue">Porta pracowniczy</h1>
+<img src="https://img.freepik.com/darmowe-wektory/spotkanie-zespolu-biznesowego-w-biurze-lub-w-przestrzeni-coworkingowej_74855-6913.jpg?t=st=1654421526~exp=1654422126~hmac=6d3e5dfd4ceada23fe55eb11c6265be0229ef0d71a8f92b8b2e17c63dfa79e4f&w=826" style="height: 200px">
+
+<h2 class="mt-4" style="color: midnightblue">Dane pracowników</h2>
+
+<table class="table  mt-4">
+    <thead>
+    <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Data urodzenia</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employees: ${employees}">
+        <td th:text="${employees.firstName}"></td>
+        <td th:text="${employees.lastName}"></td>
+        <td th:text="${employees.birthDate}"></td>
+
+    </tr>
+    </tbody>
+</table>
+
+<a href="/add" class="list-group-item list-group-item-action">Dodaj pracownika</a>
+
+</body>
+</html>
